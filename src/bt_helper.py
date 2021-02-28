@@ -21,16 +21,18 @@ import evdev
 import pydbus
 
 # Log settings
-log_file_name = "{}/logs/{}_debug.log".format(os.path.abspath(os.path.join(os.getcwd(), os.pardir)),datetime.date.today().strftime('%m_%d_%y'))
+log_file_name = "{}/logs/{}_debug.log".format(os.path.abspath(os.path.join(
+    os.getcwd(), os.pardir)), datetime.date.today().strftime('%m_%d_%y'))
 
 logging.basicConfig(
-                    format='[%(asctime)s] - %(filename)s - %(funcName)s() - %(levelname)s - %(message)s',
-                    level=logging.DEBUG,
-                    handlers=[
-                        logging.FileHandler(log_file_name, 'a'),
-                        logging.StreamHandler(sys.stdout)
-                    ]
-                )
+    format='[%(asctime)s] - %(filename)s - %(funcName)s() - %(levelname)s - %(message)s',
+    level=logging.DEBUG,
+    handlers=[
+        logging.FileHandler(log_file_name, 'a'),
+        logging.StreamHandler(sys.stdout)
+    ]
+)
+
 
 class BtHelper:
     """
@@ -79,7 +81,8 @@ class BtHelper:
         Searches for the given BT device. If found, it calls the device address setter method to register its address
         """
 
-        logging.debug('Searching for BT Device Name: {}...'.format(self.device_name))
+        logging.debug(
+            'Searching for BT Device Name: {}...'.format(self.device_name))
 
         # Get the list of nearby devices
         nearby_devices = bt.discover_devices()
@@ -87,7 +90,8 @@ class BtHelper:
         # Iterate through each address. If the name of one matches the given BT device's, then set it as the device address
         for each_address in nearby_devices:
             if self.device_name == bt.lookup_name(each_address):
-                logging.debug('Found {} with address {}'.format(self.device_name, each_address))
+                logging.debug('Found {} with address {}'.format(
+                    self.device_name, each_address))
                 self.set_device_address(each_address)
                 return
 
@@ -106,7 +110,8 @@ class BtHelper:
         else:
             # Try connecting to the BT device
             try:
-                logging.debug("Trying to connect to BT Device Address: {}...".format(device_address))
+                logging.debug(
+                    "Trying to connect to BT Device Address: {}...".format(device_address))
 
                 # DBus object paths
                 bluez_service = 'org.bluez'
@@ -120,8 +125,8 @@ class BtHelper:
                 self.device.Connect()
 
             except Exception:
-                logging.error("Could not connect to BT Device Address: {}".format(self.device_address), exc_info=True)
-
+                logging.error("Could not connect to BT Device Address: {}".format(
+                    self.device_address), exc_info=True)
 
     def monitor_key_press(self):
         """
@@ -135,14 +140,16 @@ class BtHelper:
         try:
             dev = evdev.InputDevice(self.input_event_path)
 
-            logging.debug("Connected to BT Device Address: {}".format(self.device_address))
+            logging.debug("Connected to BT Device Address: {}".format(
+                self.device_address))
 
             for event in dev.read_loop():
                 # Click has been registered
                 if event.type == evdev.ecodes.EV_KEY:
                     logging.debug('Keypress from Bluetooth Button detected!')
                     self.device.Disconnect()
-                    logging.debug("Disonnected from BT Device Address: {}".format(self.device_address))
+                    logging.debug("Disonnected from BT Device Address: {}".format(
+                        self.device_address))
                     return
         except:
             logging.error("Could read BT input", exc_info=True)
@@ -150,6 +157,7 @@ class BtHelper:
 
 # Boolean for whether or not to continue the while loop in dummy_main_loop()
 continue_loop = True
+
 
 def dummy_main_loop():
     """
@@ -162,6 +170,7 @@ def dummy_main_loop():
 
     print("Ball-E Inactive")
 
+
 def main():
     """
     Main prototype area. Code prototyping and checking happens here.
@@ -173,7 +182,7 @@ def main():
 
     bt_helper.search_bt_device()
 
-    device_address=bt_helper.get_device_address()
+    device_address = bt_helper.get_device_address()
 
     # As long as a device address has been found
     if device_address != None:
@@ -191,7 +200,7 @@ def main():
         t2.join()
         continue_loop = False
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
     # Run the main function
     main()
-
