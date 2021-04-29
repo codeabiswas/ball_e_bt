@@ -52,7 +52,7 @@ class BtHelper:
         # BT device address
         self.device_address = None
         # Expected input event file
-        self.input_event_path = "/dev/input/event5"
+        self.input_event_path = "/dev/input/event2"
         # Jetson Nano's Bluetooth device
         self.device = None
 
