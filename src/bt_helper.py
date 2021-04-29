@@ -10,6 +10,7 @@ Last Modified: February 28, 2021
 """
 
 import datetime
+import glob
 import logging
 import os
 import sys
@@ -51,8 +52,6 @@ class BtHelper:
         self.device_name = device_name
         # BT device address
         self.device_address = None
-        # Expected input event file
-        self.input_event_path = "/dev/input/event2"
         # Jetson Nano's Bluetooth device
         self.device = None
 
@@ -138,7 +137,10 @@ class BtHelper:
 
         # Read from the input device. When an click is registered, exit
         try:
-            dev = evdev.InputDevice(self.input_event_path)
+            # Expected input event file
+            input_event_path = max(
+                glob.glob('/dev/input/*'), key=os.path.getctime)
+            dev = evdev.InputDevice(input_event_path)
 
             logging.debug("Connected to BT Device Address: {}".format(
                 self.device_address))
