@@ -20,6 +20,7 @@ import time
 import bluetooth as bt
 import evdev
 import pydbus
+from evdev.device import DeviceInfo
 
 # Log settings
 log_file_name = "{}/logs/{}_debug.log".format(os.path.abspath(os.path.join(
@@ -139,7 +140,7 @@ class BtHelper:
         try:
             # Expected input event file
             input_event_path = max(
-                glob.glob('/dev/input/*'), key=os.path.getctime)
+                glob.glob('/dev/input/event*'), key=os.path.getctime)
             dev = evdev.InputDevice(input_event_path)
 
             logging.debug("Connected to BT Device Address: {}".format(
