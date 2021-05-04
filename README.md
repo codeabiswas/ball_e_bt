@@ -17,7 +17,7 @@ Contains 'production-level', 100% working code
 Contains beta code. This will be the primary branch for system-wide testing
 
 ### feature branches
-Freature branches are development branches which is always updated with the latest `develop` branch's code. A feature branch uses the following naming convention:
+Feature branches are development branches which is always updated with the latest `develop` branch's code. A feature branch uses the following naming convention:
 
 `feature/<ticket-#>`
 
