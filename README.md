@@ -40,8 +40,6 @@ Logs from the code run in `src/`, updated on a date-basis. It will track all lev
 All `.py` files are fomatted using `autopep8` and use `UTF-8` encoding.
 
 ## Acknowledgements and Usage Agreement
-This code is written for the P21390 Project for Rochester Institute of Technology's, Kate Gleason College of Engineering's, Multidisciplinary Senior Design class. You may use and edit the contents of this code freely in your own projects as long as the following are mentioned in your source code/documentation at least once:
-* This repository's URL
+This code is written for the P21390 Project for Rochester Institute of Technology's, Kate Gleason College of Engineering's, Multidisciplinary Senior Design class. You may use and edit the contents of this code freely in your own projects as long as the following is mentioned in your source code/documentation at least once:
 * This [Confluence page's URL](https://wiki.rit.edu/display/MSDShowcase/P21390+Bi-Axial+Autonomous+Lacrosse+Learning+Evaluator) which talks about the project
 
-_Note: If for any reason the repository's URL is not available, only adding the Confluence Page in your source code/documentation will suffice._
