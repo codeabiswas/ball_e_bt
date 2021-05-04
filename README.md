@@ -3,7 +3,6 @@
 This repository contains all the code and related logs/files pertaining to the Bluetooth functionality for the Bi-Axial Autonomous Lacrosse Learning Evaluator (Ball-E).
 
 ## Pre-requisites
----
 * `Python 3.6.9`
 * `PyBluez`
 * `evdev`
