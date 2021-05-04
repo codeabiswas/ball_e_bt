@@ -1,6 +1,6 @@
 # Bluetooth for Ball-E
 
-This repository contains all the code and related logs/files pertaining to the Bluetooth functionality for Ball-E.
+This repository contains all the code and related logs/files pertaining to the Bluetooth functionality for the Bi-Axial Autonomous Lacrosse Learning Evaluator (Ball-E).
 
 ## Pre-requisites
 ---
