@@ -176,7 +176,7 @@ def dummy_main_loop():
 
 def main():
     """
-    Main prototype area. Code prototyping and checking happens here.
+    Main prototype/testing area. Code prototyping and checking happens here.
     """
 
     global continue_loop

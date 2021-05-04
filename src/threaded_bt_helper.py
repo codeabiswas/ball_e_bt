@@ -2,7 +2,7 @@
 threaded_bt_helper.py
 ---
 This file contains the BtHelper class, which allows for Bluetooth (BT) connectivity between the Jetson Nano and a BT input device (i.e.: keyboard)
-But this time, it is using QThread
+But this time, it is using QThread so that it can be used by Ball-E's GUI.
 ---
 
 Author: Andrei Biswas (@codeabiswas)
@@ -190,7 +190,7 @@ def dummy_main_loop():
 
 def main():
     """
-    Main prototype area. Code prototyping and checking happens here.
+    Main prototype/testing area. Code prototyping and checking happens here.
     """
 
     global continue_loop

@@ -37,4 +37,7 @@ Logs from the code run in `src/`, updated on a date-basis. It will track all lev
 
 ## File Structure
 
-All `.py` files are fomatted using `autopep8`.
+All `.py` files are fomatted using `autopep8` and use `UTF-8` encoding.
+
+## ACKNOWLEDGEMENTS AND USAGE AGREEMENT
+This code is part of the P21390 Project for Rochester Institute of Technology's, Kate Gleason College of Engineering's, Multidisciplinary Senior Design class. You may use and edit the contents of this code freely in your own projects as long as this repository's URL is linked in your source code/documentation somewhere.
